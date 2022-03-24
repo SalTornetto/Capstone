@@ -1,3 +1,5 @@
+// all these api call use the block name optiobns which needs to be changes to be more descriptive
+
 //Amazon api code -- Hard Limit 200/month
 
 //this is only for minecraft as shown in the url having product id B07D13QGXM
