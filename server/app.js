@@ -25,10 +25,10 @@ var port = process.env.PORT || process.env.NODE_PORT || 5200;
 var router = require("./router.js");
 router(app);
 
-/*/Service listeners 
+//Service listeners 
 var services = require("./services.js");
 services(app);
-*/
+/**/
 
 //listen
 server = app.listen(port, function(err) {

@@ -11,7 +11,9 @@
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="../css/ss_base.css" rel="stylesheet" />
+        <link href="/ss_base" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="/client/js/browse-library.js" async></script> 
     </head>
     <body>
 
@@ -19,11 +21,11 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-ssGreen">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="ss_home.html">SavinSum</a>
+                <a class="navbar-brand" href="ss_home">SavinSum</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link" style="color: #ebebeb;" href="ss_home.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: #ebebeb;" href="ss_home">Home</a></li>
                         <li class="nav-item"><a class="nav-link" style="color: #ebebeb;" href="#!">Profile</a></li>     
                         <!-- droppdown menu located in the top nav bar                         
                         <li class="nav-item dropdown">
@@ -97,21 +99,20 @@
                 <div class="row gx-4 gx-lg-5 align-items-center">
 
                     <!--class="col-md-4" the -4 changes size of image. Default 6. working on wrapping text -->
-                    <div class="col-md-4"><img class="card-img-top mb-5 mb-md-0" src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png" alt="..." /></div>
+                    <div class="col-md-4" id="SSimage"><img class="card-img-top mb-5 mb-md-0" src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png" alt="..." /></div>
                     <div class="col-md-6">
                         <!-- SKU header: above the title, unnessisary right now
                         <div class="small mb-1">SKU: BST-498</div>-->
-                        <h1 class="display-5 fw-bolder">Minecraft</h1>
-                        <div class="small mb-1">Publisher: Mojang Studios</div>
-                        <div class="small mb-1">Genres: Adventure, Arcade</div>
+                        <h1 class="display-5 fw-bolder" id="SSname">Minecraft</h1>
+                        <div class="small mb-1" id="SSdeveloper">Developer: Mojang Studios</div>
+                        <div class="small mb-1" id="SSgenre">Genres: Adventure, Arcade</div>
                         <div class="fs-5 mb-3">
                             <span class="text-decoration-line-through">$29.99</span>
                             <span>$24.99</span>
                         </div>
                         <!--  game description: from "minecraft for windows" on microsoft store-->
-                        <p class="lead">Explore randomly generated worlds and build amazing things from the simplest of homes to the grandest of castles. Play in creative mode with unlimited resources or mine deep into the world in survival mode, crafting weapons and armor to fend off the dangerous mobs. Scale craggy mountains, unearth elaborate caves, and mine large ore veins. Discover lush cave and dripstone cave biomes. Light up your world with candles to show what a savvy spelunker and master mountaineer you are!
-                        </p>
-
+                        <p class="lead" id="SSdescription"> Explore randomly generated worlds and build amazing things from the simplest of homes to the grandest of castles. Play in creative mode with unlimited resources or mine deep into the world in survival mode, crafting weapons and armor to fend off the dangerous mobs. Scale craggy mountains, unearth elaborate caves, and mine large ore veins. Discover lush cave and dripstone cave biomes. Light up your world with candles to show what a savvy spelunker and master mountaineer you are!
+                       </p>
                        
 
                         <!--   Add to cart button 

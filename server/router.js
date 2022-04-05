@@ -12,12 +12,37 @@ var router = function(app) {
   })
 
   app.get("/ss_base", function(req, res) {
-    res.status(200).sendFile(path.join(__dirname + "../client/css/ss_base.css"));
+    res.status(200).sendFile(path.join(__dirname + "/../client/css/ss_base.css"));
 
   })
 
   app.get("/minecraft", function(req, res) {
     res.status(200).sendFile(path.join(__dirname + "/../client/html/minecraft.html"));
+
+  })
+
+  app.get("/images/fortnite.jpg", function(req, res) {
+    res.status(200).sendFile(path.join(__dirname + "/../client/images/fortnite.jpg"));
+
+  })
+
+  app.get("/images/minecraft.jpg", function(req, res) {
+    res.status(200).sendFile(path.join(__dirname + "/../client/images/minecraft.jpg"));
+
+  })
+
+  app.get("/images/gtav.jpg", function(req, res) {
+    res.status(200).sendFile(path.join(__dirname + "/../client/images/gtav.jpg"));
+
+  })
+
+  app.get("/images/skyrim.jpg", function(req, res) {
+    res.status(200).sendFile(path.join(__dirname + "/../client/images/skyrim.jpg"));
+
+  })
+
+  app.get("/images/overwatch.jpg", function(req, res) {
+    res.status(200).sendFile(path.join(__dirname + "/../client/images/overwatch.jpg"));
 
   })
 
