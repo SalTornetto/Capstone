@@ -16,8 +16,8 @@ var router = function(app) {
 
   })
 
-  app.get("/minecraft", function(req, res) {
-    res.status(200).sendFile(path.join(__dirname + "/../client/html/minecraft.html"));
+  app.get("/game_page", function(req, res) {
+    res.status(200).sendFile(path.join(__dirname + "/../client/html/game_page.html"));
 
   })
 
@@ -46,5 +46,16 @@ var router = function(app) {
 
   })
 
+  app.get("/images/pokemon-legends-arceus.jpg", function(req, res) {
+    res.status(200).sendFile(path.join(__dirname + "/../client/images/pokemon-legends-arceus.jpg"));
+
+  })
+
+  app.get("/images/loadingCircle.gif", function(req, res) {
+    res.status(200).sendFile(path.join(__dirname + "/../client/images/loadingCircle.gif"));
+
+  })
+
+  
 };
   module.exports = router;

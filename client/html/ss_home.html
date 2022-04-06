@@ -13,6 +13,14 @@
         <!-- Core theme CSS (includes Bootstrap)   -->
         <link href="ss_base" rel="stylesheet"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="/client/js/ss_home.js" async></script>
+        <script src="/client/js/browse-library.js" async></script> 
+   
+        <script>
+            var idGame = 2;
+        </script>
+   
+   
     </head>
     <body>
         <!-- Navigation-->
@@ -95,7 +103,7 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image   https://s2.gaming-cdn.com/images/products/8908/orig/pokemon-legends-arceus-switch-game-nintendo-eshop-europe-cover.jpg  -->
-                            <img class="card-img-top" src="../images/fortnite.jpg" alt="pokemon-legends-arceus" />
+                            <img class="card-img-top" src="../images/pokemon-legends-arceus.jpg" alt="pokemon-legends-arceus" />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -120,7 +128,7 @@
                             <!-- Sale badge
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>-->
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://static-cdn.jtvnw.net/ttv-boxart/33214-272x380.jpg" alt="Fortnite" />
+                            <img class="card-img-top" src="../images/fortnite.jpg" alt="Fortnite" />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -151,23 +159,24 @@
   <!-- Start of tile object -->
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Sale badge-->
+                            <!-- Sale badge
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            -->
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png" alt="Minecraft" />
+                            <img class="card-img-top" src="../images/minecraft.jpg" alt="Minecraft" />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Minecraft</h5>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">$29.99</span>
-                                    $24.99
+                                    <!-- Product price
+                                    <span class="text-muted text-decoration-line-through">$29.99</span>-->
+                                    $29.99
                                 </div>
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/minecraft">View Game</a></div>
+                                <div class="text-center"><a onclick= "clickerF(0)" class="btn btn-outline-dark mt-auto" href="/game_page">View Game</a></div>
                             </div>                                                                      <!-- .html -->
                         </div>
                     </div>
@@ -182,7 +191,7 @@
                             <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://www.rockstargames.com/V/img/global/order/GTAV-PC.jpg" alt="GTA V" />
+                            <img class="card-img-top" src="../images/gtav.jpg" alt="GTA V" />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -203,8 +212,8 @@
                                       -->
                                     </div>
                                     <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">$29.99</span>
-                                    $14.99
+                                    <span class="text-muted text-decoration-line-through">$59.99</span>
+                                    $29.99
                                 </div>
                             </div>
                             <!-- Product actions-->

@@ -18,7 +18,7 @@ var services = function(app) {
    
 
     app.get('/read-records', function(req, res){
-      connection.query("SELECT * FROM game JOIN genre ON game.idGenre = genre.idGenre ORDER BY idGame", function(err, rows){
+      connection.query("SELECT * FROM game JOIN genre ON game.idGenre = genre.idGenre JOIN price_history 	ON game.idGame = price_history.idGames WHERE (SELECT price FROM game JOIN price_history  ON game.idGame = price_history.idGames WHERE idGame = 1  group by idGames order BY price_date ASC) group by idGame ORDER BY idGame", function(err, rows){
           if(err){
             return res.status(201).send(JSON.stringify({msg: "FAIL:" + err}));
           }else{
