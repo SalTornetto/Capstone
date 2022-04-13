@@ -5,7 +5,7 @@
 //this is only for minecraft as shown in the url having product id B07D13QGXM
 const request = require('request');
 
-const options = {
+const optionsA = {
   method: 'GET',
   url: 'https://amazon24.p.rapidapi.com/api/product/B07D13QGXM',
   qs: {country: 'US'},
@@ -16,7 +16,7 @@ const options = {
   }
 };
 
-request(options, function (error, response, body) {
+request(optionsA, function (error, response, body) {
 	if (error) throw new Error(error);
 
 	console.log(body);
@@ -28,7 +28,7 @@ request(options, function (error, response, body) {
 //this is for legends arceus shown by having the tcin to 83617997
 const request = require('request');
 
-const options = {
+const optionsT = {
   method: 'GET',
   url: 'https://target-com-store-product-reviews-locations-data.p.rapidapi.com/product/details',
   qs: {store_id: '3991', tcin: '83617997'},
@@ -39,7 +39,7 @@ const options = {
   }
 };
 
-request(options, function (error, response, body) {
+request(optionsT, function (error, response, body) {
 	if (error) throw new Error(error);
 
 	console.log(body);
@@ -49,7 +49,7 @@ request(options, function (error, response, body) {
 //walmart api for pokemon egends arcues  -    Hard limit 500/month   (make sure your are using get-details-v3!)
 const request = require('request');
 
-const options = {
+const optionsW = {
   method: 'GET',
   url: 'https://walmart.p.rapidapi.com/products/v3/get-details',
   //usItemId is present at the end of the url for an item and serves as the look up 
@@ -61,7 +61,7 @@ const options = {
   }
 };
 
-request(options, function (error, response, body) {
+request(optionsW, function (error, response, body) {
 	if (error) throw new Error(error);
 
 	console.log(body);

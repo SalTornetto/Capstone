@@ -16,6 +16,11 @@ var router = function(app) {
 
   })
 
+  app.get("/ss_searchbar", function(req, res) {
+    res.status(200).sendFile(path.join(__dirname + "/../client/css/ss_searchbar.css"));
+
+  })
+
   app.get("/game_page", function(req, res) {
     res.status(200).sendFile(path.join(__dirname + "/../client/html/game_page.html"));
 

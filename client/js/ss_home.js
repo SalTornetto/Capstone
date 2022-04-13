@@ -7,3 +7,9 @@ function clickerF(idg){
     console.log("hello sal" + i);
 }
 
+
+
+
+
+
+

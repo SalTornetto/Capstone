@@ -44,7 +44,7 @@ function retrieveData(idGame){
     });
 }
 */
-//i=3;
+//i=4;
 
 function createSSdesciption(data){
     var descriptionHTML,nameHTML, developerHTML = "";
