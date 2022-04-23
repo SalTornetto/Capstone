@@ -21,10 +21,31 @@ var router = function(app) {
 
   })
 
+  app.get("/minecraftcss", function(req, res) {
+    res.status(200).sendFile(path.join(__dirname + "/../client/css/minecraft.css"));
+
+  })
+
   app.get("/game_page", function(req, res) {
     res.status(200).sendFile(path.join(__dirname + "/../client/html/game_page.html"));
 
   })
+
+  app.get("/search", function(req, res) {
+    res.status(200).sendFile(path.join(__dirname + "/../client/html/search.html"));
+
+  })
+
+  app.get("/images/logo.png", function(req, res) {
+    res.status(200).sendFile(path.join(__dirname + "/../client/images/logo.png"));
+
+  })
+
+  app.get("/images/istockphotoBlue.jpg", function(req, res) {
+    res.status(200).sendFile(path.join(__dirname + "/../client/images/istockphotoBlue.jpg"));
+  
+  })
+
 
   app.get("/images/fortnite.jpg", function(req, res) {
     res.status(200).sendFile(path.join(__dirname + "/../client/images/fortnite.jpg"));

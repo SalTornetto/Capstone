@@ -1,10 +1,9 @@
 
 ////  document.getElementById("button2").onclick= "clickerF()";
-function clickerF(idg){
-    i = idg;
-    retrieveData();
-    
-    console.log("hello sal" + i);
+function clickerF(id){  
+    localStorage.setItem("id", id);
+
+    console.log("hello sal" + id);
 }
 
 

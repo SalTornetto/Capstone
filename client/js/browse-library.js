@@ -44,11 +44,13 @@ function retrieveData(idGame){
     });
 }
 */
-//i=4;
+
 
 function createSSdesciption(data){
     var descriptionHTML,nameHTML, developerHTML = "";
-   // i=this.id;
+    i = localStorage.getItem('id');
+    // i = sessionStorage.getItem('id');
+
     imageHTML = '<img class="card-img-top mb-5 mb-md-0" src="..' + data[i].Image_link + '" alt="' + data[i].game_name + '" />';
     $('#SSimage').html(imageHTML);
 

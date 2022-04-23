@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>SavinSum</title>
+        <title>Search</title>
         <!-- Favicon -->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" /> 
         <!-- Bootstrap icons -->
@@ -18,6 +18,8 @@
         <script src="/client/js/ss_home.js" async></script>
         <script src="/client/js/browse-library.js" async></script> 
         <!-- Searchbar -->
+        <!-- <link href="minecraftcss" rel="stylesheet"/> -->
+        
         <link href="ss_searchbar" rel="stylesheet"/>
 
         <!-- <script>
@@ -35,62 +37,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="search">Search</a></li>     
-                        
-                        
-                        
-                        <!-- droppdown menu located in the top nav bar                         
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">All Products</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">Popular Items</a></li>
-                                <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
-                            </ul>
-                        </li>-->
+                        <li class="nav-item"><a class="nav-link" href="#!">Search</a></li>     
+   
                     </ul>
 
          <!-- Navbar Search-->
-            <!-- <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-                <div class="input-group">
-                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />  
-               
-                <button class="btn btn-sssearch" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i> 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                  </svg>
-                    
-                 </button>            
-              </div> -->
-
-
-        <div class="wrapper">
-            <div class="search-input">
-              <a href="" target="_blank" hidden></a>
-              <input type="text" placeholder="Search for...">
-              <div class="autocom-box">
-                <!-- here is list are inserted from javascript -->
-              </div>
-              <div class="icon"> <i class="fas fa-search"></i>
-
-            </div>
-            </div>
-          </div>
-
-          <script src="/client/js/searchbar.js"></script>
-    </body>
+        
 
 
           </form>
-                    <!-- cart icon in corner
-                    <form class="d-flex">
-                        <button class="btn btn-outline-dark" type="submit">
-                            <i class="bi-cart-fill me-1"></i>
-                            Cart
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                        </button>
-                    </form>-->
+                   
                 </div>
             </div>
         </nav>
@@ -99,16 +55,39 @@
             <!-- <img id="logo" src="../images/istockphotoBlue.jpg" alt="Blue" /> -->
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
-                    <h1 id="gamesLabel" class="display-4 fw-bolder">Explore Games</h1>
-                    <p id="gamesLabel" class="leadSS fw-normal text-white mb-0">and compare prices</p>
+                    <h1 id="searchLabel" class="display-4 fw-bolder">Search for games below</h1>
+                    <!-- <p id="gamesLabel" class="leadSS fw-normal text-white mb-0">and compare prices</p> -->
                 </div>
             </div>
           </header>
 
+
+
+
+          <div id="bigS">
+            <div class="wrapper">
+                <div class="search-input">
+                <a href="" target="_blank" hidden></a>
+                <input type="text" placeholder="Search again...">
+                <div class="autocom-box">
+                    <!-- here is list are inserted from javascript -->
+                </div>
+                <div class="icon"> <i class="fas fa-search"></i>
+
+                </div>
+                </div>
+            </div>
+        </div>
+    
+        <script src="/client/js/searchbar.js"></script>
+
+
+
+
           <header class="pt-5 pb-0"> 
           <nav class="navbar navbar-expand-lg ">
             <div class="container px-4 px-lg-5">               
-                <h1 class="display-6 fw-bolder">Featured Games</h1>
+                <h1 class="display-6 fw-bolder">Explore Games</h1>
             </div>
           </nav>
       
@@ -246,129 +225,6 @@
                         </div>
                     </div>
 
-<!-- 
-
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Sale badge- ->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image- ->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details- ->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name- ->
-                                    <h5 class="fw-bolder">Sale Item</h5>
-                                    <!-- Product price- ->
-                                    <span class="text-muted text-decoration-line-through">$50.00</span>
-                                    $25.00
-                                </div>
-                            </div>
-                            <!-- Product actions- ->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-
-
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image- ->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details- ->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name- ->
-                                    <h5 class="fw-bolder">Fancy Product</h5>
-                                    <!-- Product price- ->
-                                    $120.00 - $280.00
-                                </div>
-                            </div>
-                            <!-- Product actions- ->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Sale badge- ->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image- ->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details- ->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name- ->
-                                    <h5 class="fw-bolder">Special Item</h5>
-                                    <!-- Product reviews- ->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
-                                    <!-- Product price- ->
-                                    <span class="text-muted text-decoration-line-through">$20.00</span>
-                                    $18.00
-                                </div>
-                            </div>
-                            <!-- Product actions- ->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image- ->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details- ->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name- ->
-                                    <h5 class="fw-bolder">Popular Item</h5>
-                                    <!-- Product reviews- ->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
-                                    <!-- Product price- ->
-                                    $40.00
-                                </div>
-                            </div>
-                            <!-- Product actions- ->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
- -->
-
-
-
-
 
         </section>
         <!-- Footer-->
@@ -381,25 +237,5 @@
         <script src="js/scripts.js"></script>
 
 
-<!-- 
-        <div class="wrapper">
-            <div class="search-input">
-              <a href="" target="_blank" hidden></a>
-              <input type="text" placeholder="Type to search..">
-              <div class="autocom-box">
-                
-              </div>
-              <div class="icon"><i class="fas fa-search"></i></div>
-            </div>
-          </div>
-
-
-
-
-    </body>
-
-    <script src="/client/js/searchbar.js"></script>
-    <link href="ss_reset" rel="stylesheet"/>
-     -->
 </html>
 

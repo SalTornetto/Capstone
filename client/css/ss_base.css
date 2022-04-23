@@ -41,8 +41,9 @@
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
-  --bs-ssGreen-hex: #0fad07;  /* ssGreen is the addded color used in background (rgb or hex) */
+  --bs-ssGreen-hex: #0fade3;  /*#0fad07 ssGreen is the addded color used in background (rgb or hex) */
   --bs-ssGreen-rgb: 15, 173, 7;
+   --bs-ssGreenb-rgb:0, 197, 232; /*15, 173, 227; */
   --bs-primary-rgb: 13, 110, 253;
   --bs-secondary-rgb: 108, 117, 125;
   --bs-success-rgb: 25, 135, 84;
@@ -90,6 +91,29 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+
+#logo {
+  width:240px; 
+  height: auto;
+}
+
+#blueBG {
+  background-image: url("../images/istockphotoBlue.jpg");
+  width:  auto; 
+  height: auto;
+  background-repeat: repeat;
+}
+
+#gamesLabel {
+  color: white;
+  text-shadow: -1px 1px 2px #000,
+				  1px 1px 2px #000,
+				  1px -1px 0 #000,
+				  -1px -1px 0 #000;
+}
+ .leadSS {
+  font-size: 1.75rem;
+ }
 
 hr {
   margin: 1rem 0;
@@ -3063,6 +3087,8 @@ textarea.form-control-lg {
 
 .btn-sssearch {
   color: #fff;
+  /* background-color: #0fade3;
+  border-color:     #0fade3; */
   background-color: #0fad07;
   border-color:     #0fad07;
 }
@@ -7902,7 +7928,7 @@ textarea.form-control-lg {
 
 .bg-dark {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-ssGreen-rgb), var(--bs-bg-opacity)) !important;
+  background-color: rgba(var(--bs-ssGreenb-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .bg-black {
