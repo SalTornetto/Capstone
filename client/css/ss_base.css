@@ -104,13 +104,39 @@ body {
   background-repeat: repeat;
 }
 
-#gamesLabel {
+#gamesLabel, #searchLabel{
   color: white;
   text-shadow: -1px 1px 2px #000,
 				  1px 1px 2px #000,
 				  1px -1px 0 #000,
 				  -1px -1px 0 #000;
 }
+
+#targetLogo {
+  float: left;
+  width: 33%; 
+  max-width: 70px;
+  max-height: auto;
+  /* background:Red; */
+}
+
+#walmartLogo {
+  float: left;
+  width: 33%;
+  max-width: 65px;
+  max-height: auto;
+  /* background:rgb(64, 4, 173); */
+}
+
+#amazonLogo {
+  float: left;
+  width: 33%;
+  max-width: 70px;
+  max-height: auto;
+  /* background:rgb(223, 209, 19); */
+}
+
+
  .leadSS {
   font-size: 1.75rem;
  }

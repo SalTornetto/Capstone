@@ -77,6 +77,21 @@ var router = function(app) {
 
   })
 
+  app.get("/images/amazonLogo.png", function(req, res) {
+    res.status(200).sendFile(path.join(__dirname + "/../client/images/amazonLogo.png"));
+
+  })
+
+  app.get("/images/targetLogo.png", function(req, res) {
+    res.status(200).sendFile(path.join(__dirname + "/../client/images/targetLogo.png"));
+
+  })
+
+  app.get("/images/walmartLogo.png", function(req, res) {
+    res.status(200).sendFile(path.join(__dirname + "/../client/images/walmartLogo.png"));
+
+  })
+
   app.get("/images/loadingCircle.gif", function(req, res) {
     res.status(200).sendFile(path.join(__dirname + "/../client/images/loadingCircle.gif"));
 

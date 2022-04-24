@@ -17,6 +17,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="/client/js/browse-library.js" async></script> 
         <script src="/client/js/ss_home.js" async></script>
+        <script src="/client/js/price-library.js" async></script> 
         <!-- Searchbar -->
         <link href="ss_searchbar" rel="stylesheet"/>
     </head>
@@ -31,7 +32,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link" style="color: #ebebeb;" href="ss_home">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" style="color: #ebebeb;" href="#!">Profile</a></li>     
+                        <li class="nav-item"><a class="nav-link" style="color: #ebebeb;" href="ss_searchbar">Search</a></li>     
                         <!-- droppdown menu located in the top nav bar                         
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
@@ -122,21 +123,45 @@
                                             <div class="row gx-4 gx-lg-5 align-items-center">
 
                                                 <!--class="col-md-4" the -4 changes size of image. Default 6. working on wrapping text -->
-                                                <div class="col-md-4" id="SSimage"><img class="card-img-top mb-5 mb-md-0" src="../images/minecraft.jpg" alt="Loading" /></div>
+                                                <div class="col-md-4" id="SSimage"><img class="card-img-top mb-5 mb-md-0" src="../images/loadingCircle.gif" alt="Loading" /></div>
                                                 <div class="col-md-6">
                                                     <!-- SKU header: above the title, unnessisary right now
                                                     <div class="small mb-1">SKU: BST-498</div>-->
-                                                    <h1 class="display-5 fw-bolder" id="SSname">Minecraft</h1>
-                                                    <div class="small mb-1" id="SSdeveloper">Developer: Mojang Studios</div>
-                                                    <div class="small mb-1" id="SSgenre">Genres: Sandbox</div>
+                                                    <h1 class="display-5 fw-bolder" id="SSname">Loading</h1>
+                                                    <div class="small mb-1" id="SSdeveloper">Developer: </div>
+                                                    <div class="small mb-1" id="SSgenre">Genres: </div>
                                                     <div class="fs-5 mb-3">
                                                         <!-- <span class="text-decoration-line-through">$29.99</span> -->
-                                                        <span id="SSprice">$29.99</span>
+                                                        <span id="SSprice" title='Manufacturer Suggested Retail Price'>$00.00</span>
                                                     </div>
                                                     <!--  game description: from "minecraft for windows" on microsoft store-->
-                                                    <p class="lead" id="SSdescription"> Explore randomly generated worlds and build amazing things from the simplest of homes to the grandest of castles. Play in creative mode with unlimited resources or mine deep into the world in survival mode, crafting weapons and armor to fend off the dangerous mobs. Scale craggy mountains, unearth elaborate caves, and mine large ore veins. Discover lush cave and dripstone cave biomes. Light up your world with candles to show what a savvy spelunker and master mountaineer you are!
-                                                </p>
+                                                    <p class="lead" id="SSdescription"> Welcome to Spinning Wheel Simulator! If loading time seems excessive try searching the game again. Sorry for the inconvience.
+
+                                                    </p>
                                                 
+                                                <!-- Prices by store -->
+                                                <div class="pt-3">
+                                                    <div id="amazonLogo" class="mx-5">
+                                                        <img  class="card-img-top mb-5 mb-md-0 " src="../images/amazonLogo.png" title="Amazon" alt="Amazon" />                                                    
+                                                        <div class="fs-5 mt-6">
+                                                            <span id="Aprice">$00.00</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div id="targetLogo" class="mx-5">
+                                                        <img  class="card-img-top mb-5 mb-md-0 " src="../images/targetLogo.png" title="Target" alt="Target" />                                                    
+                                                        <div class="fs-5 mx-1 mt-6 ml-5">
+                                                            <span id="Tprice">$00.00</span>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div id="walmartLogo" class="mx-5">
+                                                        <img  class="card-img-top mb-5 mb-md-0" src="../images/walmartLogo.png" title="Walmart" alt="Walmart" />                                                    
+                                                        <div class="fs-5 mt-6">
+                                                            <span id="Wprice">$00.00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
                                                     <!--   Add to cart button 
                                                     <div class="d-flex">
@@ -193,7 +218,7 @@
         <!-- Related items section-->
         <section class="py-5 bg-light">
             <div class="container px-4 px-lg-5 mt-5">
-                <h2 class="fw-bolder mb-4">Related products</h2>
+                <h2 class="fw-bolder mb-4">Explore Games</h2>
                 
                     <div class="container px-4 px-lg-5 mt-5">
                         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
@@ -212,7 +237,7 @@
                                     </div>
                                     <!-- Product actions-->
                                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" onclick= "clickerF(5)" href="#">View Game</a></div>
+                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" onclick= "clickerF(5)" href="../game_page">View Game</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -246,7 +271,7 @@
                                     </div>
                                     <!-- Product actions-->
                                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" onclick= "clickerF(1)" id="button2" href="#">View Game</a></div>
+                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" onclick= "clickerF(1)" id="button2" href="../game_page">View Game</a></div>
 
                                     </div>
                                 </div>
@@ -283,7 +308,7 @@
                                     </div>
                                     <!-- Product actions-->
                                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" onclick= "clickerF(0)" href="#">View Game</a></div>
+                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" onclick= "clickerF(0)" href="../game_page">View Game</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -325,7 +350,7 @@
                                     </div>
                                     <!-- Product actions-->
                                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" onclick= "clickerF(2)" href="#">View Game</a></div>
+                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" onclick= "clickerF(2)" href="../game_page">View Game</a></div>
                                     </div>
                                 </div>
                             </div>

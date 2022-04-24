@@ -55,12 +55,22 @@
             <!-- <img id="logo" src="../images/istockphotoBlue.jpg" alt="Blue" /> -->
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
-                    <h1 id="searchLabel" class="display-4 fw-bolder">Search for games below</h1>
+                    <h1 id="searchLabel" class="display-4 fw-bolder"> Search for games below </h1>
                     <!-- <p id="gamesLabel" class="leadSS fw-normal text-white mb-0">and compare prices</p> -->
                 </div>
             </div>
           </header>
 
+          <script>
+
+              let searchLabel = 'Search for games below';
+              searchLabel = localStorage.getItem('searchLabel');
+              if (searchLabel.length > 0){
+                  $('#searchLabel').html(searchLabel);
+                  localStorage.setItem('searchLabel','');
+              }
+            
+          </script>
 
 
 

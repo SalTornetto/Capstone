@@ -1,5 +1,5 @@
 retrieveData();
-
+// retrieveTPrice();
 
 function retrieveData(){
     //use ajax top get data
@@ -23,29 +23,6 @@ function retrieveData(){
 
 
 
-/*
-function retrieveData(idGame){
-    //use ajax top get data
-    $.ajax({
-        url: 'http://localhost:5200' + '/read-records',
-        type: 'get',
-        success: function(response) {
-            var data = JSON.parse(response);
-            if(data.msg === "SUCCESS") {
-                createSSdesciption(data.game, idGame);
-            }else{
-                console.log(data.msg);
-            }
-            
-        },
-        error: function(err){
-            alert(err);
-        }
-    });
-}
-*/
-
-
 function createSSdesciption(data){
     var descriptionHTML,nameHTML, developerHTML = "";
     i = localStorage.getItem('id');
@@ -66,12 +43,12 @@ function createSSdesciption(data){
     genreHTML = "Genre: " + data[i].genre_name;
     $('#SSgenre').html(genreHTML);
 
-    priceHTML = data[i].price;
+    priceHTML = data[i].msrp;
     if(priceHTML === 0 ){
         $('#SSprice').html("FREE");
     }
     else{
-        $('#SSprice').html("$" + priceHTML);
+        $('#SSprice').html("MSRP: $" + priceHTML);
     }
     
    

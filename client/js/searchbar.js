@@ -30,17 +30,17 @@ inputBox.onkeyup = (e)=>{
     let emptyArray = [];
     if(userData){
         icon.onclick = ()=>{
-            // Set webLink to game_page and then find out if what they typed is in the array. if yes send them to the page if no send them to a new page titled search
-            // userData = userData.toLowerCase();
-
-
-            // webLink = `https://www.google.com/search?q=${userData}`;
-           clickerF(4);
-            webLink = 'game_page';
+            let check = linearSearch(selectData.toLowerCase());
+            if(check === -1){
+                webLink = 'search'; 
+                localStorage.setItem("searchLabel", `Oops! No results for  '${selectData}'`);
+               
+            }else{
+                clickerF(check);
+                webLink = 'game_page'; 
+            }
             linkTag.setAttribute("href", webLink);
             linkTag.click();
-            
-            console.log("this one");
         }//end onclick
         emptyArray = suggestions.filter((data)=>{
             return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
@@ -67,13 +67,21 @@ function select(element){
     let selectData = element.textContent;
     inputBox.value = selectData;
     icon.onclick = ()=>{
-        //make sure to copy all code from the other section to both to make sure it works properly
-        // linearSearch(selectData)
-        clickerF(linearSearch(selectData));      
-        webLink = 'game_page';
+        // clickerF(linearSearch(selectData.toLowerCase()));      
+        // webLink = 'game_page';
+        // linkTag.setAttribute("href", webLink);
+        // linkTag.click();
+        let check = linearSearch(selectData.toLowerCase());
+        if(check === -1){
+            webLink = 'search'; 
+            localStorage.setItem("searchLabel", `Oops! No results for  '${selectData}'`);
+           
+        }else{
+            clickerF(check);
+            webLink = 'game_page'; 
+        }
         linkTag.setAttribute("href", webLink);
         linkTag.click();
-        console.log("yo dawg")
     }//end onclick
     searchWrapper.classList.remove("active");
 }
@@ -97,16 +105,16 @@ function showSuggestions(list){
     suggBox.innerHTML = listData;
 }
 
-function clickerD(id){  
-    localStorage.setItem("id", id);
+// function clickerD(id){  
+//     localStorage.setItem("id", id);
 
-    console.log("hello sal" + id);
-}
-//having issue trying to get the program to only show 3 results instead of all
+//     console.log("hello sal" + id);
+// }
+// //having issue trying to get the program to only show 3 results instead of all
 
-function linearSearch( key){
+function linearSearch(key){
     for(let i = 0; i < suggestions.length; i++){
-        if(suggestions[i] === key){
+        if(suggestions[i].toLowerCase() === key){
             return i
         }
     }
