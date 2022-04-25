@@ -1,5 +1,5 @@
 const mysql = require('mysql');
-let tempID = 5;
+
 const connection = mysql.createConnection({
   host: 'localhost',//change this for real hosting, this is jsut local
   user: 'root',
@@ -41,7 +41,7 @@ var services = function(app) {
 
       app.get('/read-TPrice', function(req, res){
         // let tempID = 1;
-        let Tquery = `SELECT * FROM price_history WHERE price_date < current_date AND store='Target' AND idGames = '${tempID}' ORDER BY price_date DESC LIMIT 1`
+        let Tquery = `SELECT * FROM (SELECT idGames, MAX(price_date) AS price_date, price, store FROM price_history Where store = 'Target' GROUP BY price_date order by idGames, price_date desc) as tbale1 group by idGames`
         connection.query(Tquery, function(err, rows){
             if(err){
               return res.status(201).send(JSON.stringify({msg: "FAIL:" + err}));
@@ -53,9 +53,8 @@ var services = function(app) {
       });
 
       app.get('/read-APrice', function(req, res){
-        // let tempID = 1;
-        let Tquery = `SELECT * FROM price_history WHERE price_date < current_date AND store='Amazon' AND idGames = '${tempID}' ORDER BY price_date DESC LIMIT 1`
-        connection.query(Tquery, function(err, rows){
+        let Aquery = `SELECT * FROM (SELECT idGames, MAX(price_date) AS price_date, price, store FROM price_history Where store = 'Amazon' GROUP BY price_date order by idGames, price_date desc) as tbale1 group by idGames`
+        connection.query(Aquery, function(err, rows){
             if(err){
               return res.status(201).send(JSON.stringify({msg: "FAIL:" + err}));
             }else{
@@ -67,8 +66,8 @@ var services = function(app) {
 
       app.get('/read-WPrice', function(req, res){
         // let tempID = 1;
-        let Tquery = `SELECT * FROM price_history WHERE price_date < current_date AND store='Walmart' AND idGames = '${tempID}' ORDER BY price_date DESC LIMIT 1`
-        connection.query(Tquery, function(err, rows){
+        let Wquery = `SELECT * FROM (SELECT idGames, MAX(price_date) AS price_date, price, store FROM price_history Where store = 'Walmart' GROUP BY price_date order by idGames, price_date desc) as tbale1 group by idGames`
+        connection.query(Wquery, function(err, rows){
             if(err){
               return res.status(201).send(JSON.stringify({msg: "FAIL:" + err}));
             }else{
