@@ -41,9 +41,10 @@
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
-  --bs-ssGreen-hex: #0fade3;  /*#0fad07 ssGreen is the addded color used in background (rgb or hex) */
+  --bs-ssGreen-hex: #0fad07;
+  --bs-ssBlue-hex: #0fade3;  /* ssGreen is the addded color used in background (rgb or hex) */
   --bs-ssGreen-rgb: 15, 173, 7;
-   --bs-ssGreenb-rgb:0, 197, 232; /*15, 173, 227; */
+  --bs-ssBlue-rgb:0, 197, 232; /*15, 173, 227; */
   --bs-primary-rgb: 13, 110, 253;
   --bs-secondary-rgb: 108, 117, 125;
   --bs-success-rgb: 25, 135, 84;
@@ -136,6 +137,9 @@ body {
   /* background:rgb(223, 209, 19); */
 }
 
+.sale {
+  color: #0d9206;
+}
 
  .leadSS {
   font-size: 1.75rem;
@@ -7954,7 +7958,7 @@ textarea.form-control-lg {
 
 .bg-dark {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-ssGreenb-rgb), var(--bs-bg-opacity)) !important;
+  background-color: rgba(var(--bs-ssBlue-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .bg-black {

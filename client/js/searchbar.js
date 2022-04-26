@@ -30,10 +30,10 @@ inputBox.onkeyup = (e)=>{
     let emptyArray = [];
     if(userData){
         icon.onclick = ()=>{
-            let check = linearSearch(selectData.toLowerCase());
+            let check = linearSearch(userData.toLowerCase());
             if(check === -1){
                 webLink = 'search'; 
-                localStorage.setItem("searchLabel", `Oops! No results for  '${selectData}'`);
+                localStorage.setItem("searchLabel", `Oops! No results for  '${userData}'`);
                
             }else{
                 clickerF(check);

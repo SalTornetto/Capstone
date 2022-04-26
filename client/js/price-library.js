@@ -22,48 +22,96 @@
 
 
 
+// gameArray ,WpriceArray, ApriceArray, TpriceArray
+
+// var placeholderHTML
+
+// function createExplore(n){
+//     if(n <= 0){
+//         return -1
+//     }
+//     var placeholder = `<div class="container px-4 px-lg-5 mt-5"> <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"> `;
+    
+
+//     var arr = [0, 1, 2, 3, 4, ,5 ];
+//     shuffle(arr);
+//     console.log(arr);
 
 
 
 
-function createExplore(){
-    var placeholder;
+
+
+
+//     while(n != 0){ //how many times we create a card
+//         console.log(n)
+//         let temp = comparePrices(arr[n]);
+//         if (temp <  gameAray[arr[n]].msrp){
+//             placeholderPrice = temp;
+//         }
+//         else{
+//             placeholderPrice = gameAray[arr[n]].msrp;
+//         }
+
+
+                 
+//         placeholderHTML += ` 
+//                     <img class="card-img-top" src="..${gameAray[arr[n]].Image_link}" alt="${gameAray[arr[n]].game_name}" /> <!-- Image --> <!-- Name -->
+                    
+//                     <div class="card-body p-4">
+//                         <div class="text-center">           
+//                             <h5 class="fw-bolder">${gameAray[arr[n]].game_name}</h5> <!-- Name -->                          
+//                             <div id="cardPrice">
+//                                 ${placeholderPrice} <!-- Price -->           
+//                             </div>
+//                         </div>
+//                     </div>
+                    
+//                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+//                         <div class="text-center"><a onclick= "clickerF(${arr[n]})" class="btn btn-outline-dark mt-auto" href="/game_page">View Game</a></div>
+//                     </div>
+//         `;
+
+
+
+
+
+//         n--;
+//     }
     
     
     
-    placeholderHTML = 
-    ` 
-    <img class="card-img-top" src="..${placeholder}" alt="${placeholder}" /> <!-- Image --> <!-- Name -->
-    
-    <div class="card-body p-4">
-        <div class="text-center">           
-            <h5 class="fw-bolder">${placeholder}</h5> <!-- Name -->
-            
-                                <div id="cardPrice">
-                                    ${placeholder} <!-- Price -->           
-                                </div>
-        </div>
-    </div>
-    
-    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-        <div class="text-center"><a onclick= "clickerF(${placeholder})" class="btn btn-outline-dark mt-auto" href="/game_page">View Game</a></div>
-    </div>
-    `;
 
 
     
-    // <span class="text-muted text-decoration-line-through">$59.99</span>
-    //  $29.99 
+//     // <span class="text-muted text-decoration-line-through">$59.99</span>
+//     //  $29.99 
  
 
+//     $('#exploreCards').html(placeholderHTML);
+//     // adds n cards to html file
+
+// }
 
 
 
-}
+// function shuffle(array) {
+//   let currentIndex = array.length,  randomIndex;
 
+//   // While there remain elements to shuffle.
+//   while (currentIndex != 0) {
 
+//     // Pick a remaining element.
+//     randomIndex = Math.floor(Math.random() * currentIndex);
+//     currentIndex--;
 
+//     // And swap it with the current element.
+//     [array[currentIndex], array[randomIndex]] = [
+//       array[randomIndex], array[currentIndex]];
+//   }
 
+//   return array;
+// }
 
 
 
