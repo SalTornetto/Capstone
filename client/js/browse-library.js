@@ -1,8 +1,23 @@
 i = localStorage.getItem('id');
+var WpriceHTML, ApriceHTML, TpriceHTML;
 retrieveData();
 retrieveTPrice();
-retrieveAPrice();
 retrieveWPrice();
+retrieveAPrice();
+delay(1000).then(() => 
+comparePrices()
+);
+//using the delay toi make sure the database fully loads in browser and populates all nessisary varables
+
+
+
+// console.log("window1: " + window.TpriceHTML + " local: " + TpriceHTML);
+// console.log("W:" + WpriceHTML + " A:" + ApriceHTML + " T:" + TpriceHTML)
+// 
+
+function delay(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
+  }
 
 
 function retrieveData(){
@@ -29,17 +44,18 @@ function retrieveData(){
 
 function retrieveTPrice(){
     //use ajax top get data
-    console.log("insidev the retreive Tprice")
     $.ajax({
         url: 'http://localhost:5200' + '/read-TPrice',
         type: 'get',
         success: function(response) {
-            var data = JSON.parse(response);
-            console.log(data);
-            if(data.msg === "SUCCESS") {
-                createTPrice(data.price_history)
+            var dataT = JSON.parse(response);
+            // console.log(dataT);
+            if(dataT.msg === "SUCCESS") {
+                createTPrice(dataT.price_history);
+                setTPrice(dataT.price_history);
+                
             }else{
-                console.log(data.msg);
+                console.log(dataT.msg);
             }
             
         },
@@ -51,17 +67,18 @@ function retrieveTPrice(){
 
 function retrieveAPrice(){
     //use ajax top get data
-    console.log("insidev the retreive Aprice")
+    // console.log("insidev the retreive Aprice")
     $.ajax({
         url: 'http://localhost:5200' + '/read-APrice',
         type: 'get',
         success: function(response) {
-            var data = JSON.parse(response);
-            console.log(data);
-            if(data.msg === "SUCCESS") {
-                createAPrice(data.price_history)
+            var dataA = JSON.parse(response);
+            // console.log(dataA);
+            if(dataA.msg === "SUCCESS") {
+                createAPrice(dataA.price_history);
+                setAPrice(dataA.price_history);
             }else{
-                console.log(data.msg);
+                console.log(dataA.msg);
             }
             
         },
@@ -73,17 +90,18 @@ function retrieveAPrice(){
 
 function retrieveWPrice(){
     //use ajax top get data
-    console.log("insidev the retreive Wprice")
+    // console.log("insidev the retreive Wprice")
     $.ajax({
         url: 'http://localhost:5200' + '/read-WPrice',
         type: 'get',
         success: function(response) {
-            var data = JSON.parse(response);
-            console.log(data);
-            if(data.msg === "SUCCESS") {
-                createWPrice(data.price_history)
+            var dataW = JSON.parse(response);
+            // console.log(dataW);
+            if(dataW.msg === "SUCCESS") {
+                createWPrice(dataW.price_history);
+                setWPrice(dataW.price_history);
             }else{
-                console.log(data.msg);
+                console.log(dataW.msg);
             }
             
         },
@@ -128,39 +146,94 @@ function createSSdesciption(data){
 function createTPrice(data){
     // i = localStorage.getItem('id');
     
-    let TpriceHTML = data[i].price;
+    TpriceHTML = data[i].price;
+    // localStorage.setItem("currentTprice", TpriceHTML);
 
     if(TpriceHTML === 0 ){
         $('#Tprice').html("N/A");
     }
     else{
-        $('#Tprice').html('$' + TpriceHTML);
+        $('#Tprice').html('$' + TpriceHTML.toFixed(2)); //
     }
 }
 
 function createAPrice(data){
-    let ApriceHTML = data[i].price;
+    ApriceHTML = data[i].price;
+    // localStorage.setItem("currentAprice", ApriceHTML);
 
     if(ApriceHTML === 0 ){
         $('#Aprice').html("N/A");
     }
     else{
-        $('#Aprice').html('$' + ApriceHTML);
+        $('#Aprice').html('$' + ApriceHTML.toFixed(2));
     }
 }
 
 function createWPrice(data){
-    let WpriceHTML = data[i].price;
+    WpriceHTML = data[i].price;
+    // localStorage.setItem("currentWprice", WpriceHTML);
 
     if(WpriceHTML === 0 ){
         $('#Wprice').html("N/A");
     }
     else{
-        $('#Wprice').html('$' + WpriceHTML);
+        $('#Wprice').html('$' + WpriceHTML.toFixed(2));
     }
 }
 
 
 
+
+function setWPrice(data){
+    WpriceHTML = data[i].price;
+}
+
+function setAPrice(data){
+    ApriceHTML =data[i].price;
+}
+
+function setTPrice(data){   
+    TpriceHTML = data[i].price; 
+    
+    // console.log("window3: " + window.TpriceHTML + " local: " + TpriceHTML);
+}
+
+
+
+
+
+
+
+
+function comparePrices() {
+    // WpriceHTML, ApriceHTML, TpriceHTML;
+    // WpriceHTML = localStorage.getItem('currentWprice');
+    // ApriceHTML = localStorage.getItem('currentAprice');
+    // TpriceHTML = localStorage.getItem('currentTprice');
+    // console.log("windowFull: "+ " local: " + TpriceHTML);
+    // console.log("windowFull: "+ " local: " + ApriceHTML);
+    // console.log("windowFull: "+ " local: " + WpriceHTML);
+    let truth = false;
+    console.log("W:" + WpriceHTML + " A:" + ApriceHTML + " T:" + TpriceHTML)
+    if (WpriceHTML === ApriceHTML && WpriceHTML === TpriceHTML){
+        console.log("ALL EQUAL")
+        truth = true;
+    }
+    else if (WpriceHTML < ApriceHTML && WpriceHTML < TpriceHTML){
+        console.log("Walmart Cheapest")
+        truth = true;
+    }
+
+    else if (ApriceHTML < WpriceHTML && ApriceHTML < TpriceHTML){
+        console.log("Amazon Cheapest")
+        truth = true;
+    }
+
+    else if (TpriceHTML < WpriceHTML && TpriceHTML < ApriceHTML){
+        console.log("Target Cheapest")
+        truth = true;
+    }
+    console.log("truth: " + truth);
+}
 
 
