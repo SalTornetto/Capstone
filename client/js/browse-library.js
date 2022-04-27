@@ -16,7 +16,19 @@ createExplore(4)
 );
 //n being the number of cards created
 
+// delay(1002).then(() => 
+// whatamidoing()
+// );
 
+
+
+
+function whatamidoing() {
+var parentEl = document.getElementById("WLogo").parentElement;
+var imgEl = parentEl.innerHtml;
+parentEl.innerHtml = '<a href="test.html">' + imgEl + '</a>';
+console.log("HERE?")
+}
 
 
 function decipherComparePrices(i){
@@ -159,6 +171,23 @@ function createSSdesciption(data){
     else{
         $('#SSprice').html("MSRP: $" + priceHTML);
     }
+    
+    WlinkHTML = `<a href="https://www.walmart.com/ip/${data[i].walmartID}" target="_blank" rel="noopener noreferrer"> <img class="card-img-top mb-5 mb-md-0" src="../images/walmartLogo.png" title="Walmart" alt="Walmart" /> </a>`
+    $('#WLink').html(WlinkHTML);
+
+    AlinkHTML = `<a href="https://www.amazon.com/dp/${data[i].amazonID}" target="_blank" rel="noopener noreferrer"><img  class="card-img-top mb-5 mb-md-0" src="../images/amazonLogo.png" title="Amazon" alt="Amazon" /> </a>`
+    $('#ALink').html(AlinkHTML);
+
+    TlinkHTML = `<a href="https://www.target.com/p/A-${data[i].targetID}" target="_blank" rel="noopener noreferrer"><img  class="card-img-top mb-5 mb-md-0" src="../images/targetLogo.png" title="Target" alt="Target" />  </a> `
+    $('#TLink').html(TlinkHTML);
+
+
+// `https://www.walmart.com/ip/${walmartID}`
+
+// `https://www.amazon.com/dp/${amazonID}`
+
+// `https://www.target.com/p/A-${targetID}`
+
     
    
 }
@@ -342,7 +371,7 @@ function createExplore(n){
         <div class="col mb-5">
         <div id="card1" class="card h-100">
                     ${salesBagde}
-                    <img class="card-img-top" src="..${gameArray[arr[j]].Image_link}" alt="${gameArray[arr[j]].game_name}" /> <!-- Image --> <!-- Name -->
+                    <img class="SScard-img-top" src="..${gameArray[arr[j]].Image_link}" alt="${gameArray[arr[j]].game_name}" /> <!-- Image --> <!-- Name -->
                     
                     <div class="card-body p-4">
                         <div class="text-center">           

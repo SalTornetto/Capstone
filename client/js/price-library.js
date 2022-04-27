@@ -1,9 +1,16 @@
 // comparePrices();
 
 
+// `https://www.walmart.com/ip/${walmartID}`
 
+// `https://www.amazon.com/dp/${amazonID}`
 
+// `https://www.target.com/p/A-${targetID}`
 
+// var parentEl = document.getElementById("WLogo").parentElement;
+// var imgEl = parentEl.innerHtml;
+// parentEl.innerHtml = '<a href="test.html">' + imgEl + '</a>';
+// console.log("HERE?")
 
 
 

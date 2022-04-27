@@ -46,7 +46,7 @@ request(optionsT, function (error, response, body) {
 });
 
 
-//walmart api for pokemon egends arcues  -    Hard limit 500/month   (make sure your are using get-details-v3!)
+//walmart api for pokemon egends arcues  -     
 const request = require('request');
 
 const optionsW = {
