@@ -80,6 +80,11 @@
   }
 }
 
+.SSnav {
+  font-size: 1.25em;
+  
+}
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
@@ -105,7 +110,7 @@ body {
   background-repeat: repeat;
 }
 
-#gamesLabel, #searchLabel{
+#gamesLabel, #searchLabel, .SSnav{
   color: white;
   text-shadow: -1px 1px 2px #000,
 				  1px 1px 2px #000,
@@ -4546,17 +4551,17 @@ textarea.form-control-lg {
   color: rgba(0, 0, 0, 0.9);
 }
 .navbar-light .navbar-nav .nav-link {
-  color: rgba(0, 0, 0, 0.55);
+  color: rgba(255, 255, 255, 0.7);
 }
-.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
-  color: rgba(0, 0, 0, 0.7);
+.navbar-light .navbar-nav .nav-link:hover, .nav-link.active:hover, .navbar-light .navbar-nav .nav-link:focus {
+  color: rgba(255, 255, 255, 1);
 }
 .navbar-light .navbar-nav .nav-link.disabled {
   color: rgba(0, 0, 0, 0.3);
 }
 .navbar-light .navbar-nav .show > .nav-link,
 .navbar-light .navbar-nav .nav-link.active {
-  color: rgba(0, 0, 0, 0.9);
+  color: rgba(255, 255, 255, 0.95);
 }
 .navbar-light .navbar-toggler {
   color: rgba(0, 0, 0, 0.55);
