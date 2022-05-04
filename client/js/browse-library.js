@@ -302,26 +302,10 @@ function comparePrices(n) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 var placeholderHTML
 
 function createExplore(n){
-    var arr = [0, 1, 2, 3, 4, 5];
+    var arr = [0, 1, 2, 3, 4, 5, 6];
     if(n <= 0 || n > arr.length-1){
         console.log("----------ERROR------------");
         return 

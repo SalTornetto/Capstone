@@ -57,6 +57,11 @@ var router = function(app) {
 
   })
 
+  app.get("/images/kirby.jpg", function(req, res) {
+    res.status(200).sendFile(path.join(__dirname + "/../client/images/kirby.jpg"));
+
+  })
+
   app.get("/images/gtav.jpg", function(req, res) {
     res.status(200).sendFile(path.join(__dirname + "/../client/images/gtav.jpg"));
 

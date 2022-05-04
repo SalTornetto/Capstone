@@ -8,9 +8,8 @@ let suggestions = [
     "Overwatch",
     "Skyrim",
     "Pokemon: Legends Arceus",
-    "Potter",
-    "Polymer",
-    "Popcorn"
+    "Kirby and the Forgotten Land",
+    "ERROR"
 
 ];
 
