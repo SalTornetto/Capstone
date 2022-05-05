@@ -1,7 +1,7 @@
 const mysql = require('mysql');
 
 const connection = mysql.createConnection({
-  host: 'localhost',//change this for real hosting, this is jsut local
+  host: 'localhost',//change this for hosting, this is jsut local
   user: 'root',
   password: "Lego0582$", // "1234",//dont forget this
   database: 'savinsum',
@@ -22,7 +22,7 @@ var services = function(app) {
           if(err){
             return res.status(201).send(JSON.stringify({msg: "FAIL:" + err}));
           }else{
-            console.log("data: " + JSON.stringify(rows));
+            // console.log("data: " + JSON.stringify(rows));
             return res.status(201).send(JSON.stringify({msg: "SUCCESS", game:rows}));
           }
       });
@@ -33,7 +33,7 @@ var services = function(app) {
             if(err){
               return res.status(201).send(JSON.stringify({msg: "FAIL:" + err}));
             }else{
-              console.log("data: " + JSON.stringify(rows));
+              // console.log("data: " + JSON.stringify(rows));
               return res.status(201).send(JSON.stringify({msg: "SUCCESS", game:rows}));
             }
         });
@@ -45,7 +45,7 @@ var services = function(app) {
             if(err){
               return res.status(201).send(JSON.stringify({msg: "FAIL:" + err}));
             }else{
-              console.log("data: " + JSON.stringify(rows));
+              // console.log("data: " + JSON.stringify(rows));
               return res.status(201).send(JSON.stringify({msg: "SUCCESS", price_history:rows}));
             }
         });
@@ -57,7 +57,7 @@ var services = function(app) {
             if(err){
               return res.status(201).send(JSON.stringify({msg: "FAIL:" + err}));
             }else{
-              console.log("data: " + JSON.stringify(rows));
+              // console.log("data: " + JSON.stringify(rows));
               return res.status(201).send(JSON.stringify({msg: "SUCCESS", price_history:rows}));
             }
         });
@@ -69,7 +69,7 @@ var services = function(app) {
             if(err){
               return res.status(201).send(JSON.stringify({msg: "FAIL:" + err}));
             }else{
-              console.log("data: " + JSON.stringify(rows));
+              // console.log("data: " + JSON.stringify(rows));
               return res.status(201).send(JSON.stringify({msg: "SUCCESS", price_history:rows}));
             }
         });

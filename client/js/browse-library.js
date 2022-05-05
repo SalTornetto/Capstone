@@ -65,7 +65,6 @@ function retrieveTPrice(){
         type: 'get',
         success: function(response) {
             var dataT = JSON.parse(response);
-            // console.log(dataT);
             if(dataT.msg === "SUCCESS") {
                 createTPrice(dataT.price_history);
                 TpriceArray = dataT.price_history;
@@ -88,7 +87,6 @@ function retrieveAPrice(){
         type: 'get',
         success: function(response) {
             var dataA = JSON.parse(response);
-            // console.log(dataA);
             if(dataA.msg === "SUCCESS") {
                 createAPrice(dataA.price_history);
                 ApriceArray = dataA.price_history;
