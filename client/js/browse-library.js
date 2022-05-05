@@ -10,25 +10,10 @@ delay(1000).then(() =>
 decipherComparePrices(i)
 );
 //using the delay to make sure the database fully loads in browser and populates all nessisary varables
-
+//trying to avboid race conditions
 delay(1001).then(() => 
 createExplore(4) 
 );
-//n being the number of cards created
-
-// delay(1002).then(() => 
-// whatamidoing()
-// );
-
-
-
-
-function whatamidoing() {
-var parentEl = document.getElementById("WLogo").parentElement;
-var imgEl = parentEl.innerHtml;
-parentEl.innerHtml = '<a href="test.html">' + imgEl + '</a>';
-console.log("HERE?")
-}
 
 
 function decipherComparePrices(i){
@@ -73,7 +58,6 @@ function retrieveData(){
 }
 
 
-
 function retrieveTPrice(){
     //use ajax top get data
     $.ajax({
@@ -99,7 +83,6 @@ function retrieveTPrice(){
 
 function retrieveAPrice(){
     //use ajax top get data
-    // console.log("insidev the retreive Aprice")
     $.ajax({
         url: 'http://localhost:5200' + '/read-APrice',
         type: 'get',
@@ -122,17 +105,14 @@ function retrieveAPrice(){
 
 function retrieveWPrice(){
     //use ajax top get data
-    // console.log("insidev the retreive Wprice")
     $.ajax({
         url: 'http://localhost:5200' + '/read-WPrice',
         type: 'get',
         success: function(response) {
             var dataW = JSON.parse(response);
-            // console.log(dataW);
             if(dataW.msg === "SUCCESS") {
                 createWPrice(dataW.price_history);
-                WpriceArray = dataW.price_history;
-                // setWPrice(dataW.price_history);
+                WpriceArray = dataW.price_history;              
             }else{
                 console.log(dataW.msg);
             }
@@ -181,6 +161,7 @@ function createSSdesciption(data){
     TlinkHTML = `<a href="https://www.target.com/p/A-${data[i].targetID}" target="_blank" rel="noopener noreferrer"><img  class="card-img-top mb-5 mb-md-0" src="../images/targetLogo.png" title="Target" alt="Target" />  </a> `
     $('#TLink').html(TlinkHTML);
 
+//Format for links tyo other sites
 
 // `https://www.walmart.com/ip/${walmartID}`
 
@@ -194,10 +175,8 @@ function createSSdesciption(data){
 
 
 function createTPrice(data){
-    // i = localStorage.getItem('id');
-    
     TpriceHTML = data[i].price;
-    // localStorage.setItem("currentTprice", TpriceHTML);
+
 
     if(TpriceHTML === 0 ){
         $('#Tprice').html("N/A");
@@ -209,7 +188,6 @@ function createTPrice(data){
 
 function createAPrice(data){
     ApriceHTML = data[i].price;
-    // localStorage.setItem("currentAprice", ApriceHTML);
 
     if(ApriceHTML === 0 ){
         $('#Aprice').html("N/A");
@@ -221,7 +199,6 @@ function createAPrice(data){
 
 function createWPrice(data){
     WpriceHTML = data[i].price;
-    // localStorage.setItem("currentWprice", WpriceHTML);
 
     if(WpriceHTML === 0 ){
         $('#Wprice').html("N/A");
@@ -232,78 +209,49 @@ function createWPrice(data){
 }
 
 
-
-
 function setWPrice(data, n){
     WpriceHTML = data[n].price;
 }
 
 function setAPrice(data, n){
-    ApriceHTML =data[n].price;
+    ApriceHTML = data[n].price;
 }
 
 function setTPrice(data , n){   
     TpriceHTML = data[n].price; 
     
-    // console.log("window3: " + window.TpriceHTML + " local: " + TpriceHTML);
 } 
 
-
-
-
-
-
-
-
+//function that compares prices and sends back the initial of the cheapest store along with  the cheapest price
 function comparePrices(n) {
     setWPrice(WpriceArray , n)
     setAPrice(ApriceArray , n)
     setTPrice(TpriceArray , n)
-    // WpriceHTML, ApriceHTML, TpriceHTML;
-    // WpriceHTML = localStorage.getItem('currentWprice');
-    // ApriceHTML = localStorage.getItem('currentAprice');
-    // TpriceHTML = localStorage.getItem('currentTprice');
-    // console.log("windowFull: "+ " local: " + TpriceHTML);
-    // console.log("windowFull: "+ " local: " + ApriceHTML);
-    // console.log("windowFull: "+ " local: " + WpriceHTML);
-    let truth = false;
-
     
-    console.log("W:" + WpriceHTML + " A:" + ApriceHTML + " T:" + TpriceHTML)
+    // console.log("W:" + WpriceHTML + " A:" + ApriceHTML + " T:" + TpriceHTML)
     if (WpriceHTML === ApriceHTML && WpriceHTML === TpriceHTML){
-        console.log("ALL EQUAL")
-        truth = true;
         return WpriceHTML.toFixed(2);
     }
     else if (WpriceHTML < ApriceHTML && WpriceHTML < TpriceHTML){
-        // $('#Wprice').html('<div class="sale"> $' + WpriceHTML.toFixed(2) + '</div>');
-        // console.log("Walmart Cheapest")
-        truth = true;
         return [WpriceHTML.toFixed(2), 'W'];
     }
 
     else if (ApriceHTML < WpriceHTML && ApriceHTML < TpriceHTML){
-        // $('#Aprice').html('<div class="sale"> $' + ApriceHTML.toFixed(2) + '</div>');
-        // console.log("Amazon Cheapest")
-        truth = true;
         return [ApriceHTML.toFixed(2), 'A'];
     }
 
     else if (TpriceHTML < WpriceHTML && TpriceHTML < ApriceHTML){
-        // $('#Tprice').html('<div class="sale"> $' + TpriceHTML.toFixed(2) + '</div>');
-        // console.log("Target Cheapest")
-        truth = true;
         return [TpriceHTML.toFixed(2), 'T'];
     }
-    console.log("Hit an if statement: " + truth);
+
 }
-
-
-
-
 
 var placeholderHTML
 
+
+//this function creats n number of cards to be displayed on the home/game/search pages
+//i only even use it to set 4 cards but it will work for up to 1 less the total number of games because
+//it excludes the current game
 function createExplore(n){
     var arr = [0, 1, 2, 3, 4, 5, 6];
     if(n <= 0 || n > arr.length-1){
@@ -312,31 +260,19 @@ function createExplore(n){
     }
     placeholderHTML = `<div class="container px-4 px-lg-5 mt-5"> <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"> `;
     
-
-    
-    console.log("Normal " + arr);
     shuffle(arr);
-    console.log("Shuffeld " + arr);
 
-
-
-
-
-    for(let j = 0; j < n; j++)
+    for(let j = 0; j < n; j++){
     //  while(n != 0)
-   { //how many times we create a card
-        console.log("n: " + n + " arr[j]: " + arr[j])
-        console.log("i: " + i + 'arr[j]: ' + arr[j] )
+    //n is how many times we create a card
+
     if (arr[j] == i){
-        console.log("i and j are the same: " + i)
         n++;
         continue;
     }
 
         let temp =  comparePrices(arr[j])[0];      
-            // delay(1000).then(() => 
-            // comparePrices(arr[n])
-            // );
+
             salesBagde = '';
             if(gameArray[arr[j]].msrp === 0){
                 placeholderPrice = "FREE"
@@ -348,9 +284,7 @@ function createExplore(n){
             else{
                 placeholderPrice = "$" + gameArray[arr[j]].msrp;
             }
-
-
-                 
+       
         placeholderHTML += ` 
         <div class="col mb-5">
         <div id="card1" class="card h-100">
@@ -371,41 +305,23 @@ function createExplore(n){
                     </div>
                     </div>
                     </div>
-        `;
+                            `;
 
-
-
-
-
-        // n--;
-    }
-    
-    
-    
-
-
-    
-    // <span class="text-muted text-decoration-line-through">$59.99</span>
-    //  $29.99 
- 
-    // console.log(placeholderHTML);
+    }//end for loop
+  
     $('#exploreCards').html(placeholderHTML);
-    // adds n cards to html file
 
 }
 
 
-
+//used to randomize the games shown
 function shuffle(array) {
   let currentIndex = array.length,  randomIndex;
-
   // While there remain elements to shuffle.
   while (currentIndex != 0) {
-
     // Pick a remaining element.
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
-
     // And swap it with the current element.
     [array[currentIndex], array[randomIndex]] = [
       array[randomIndex], array[currentIndex]];

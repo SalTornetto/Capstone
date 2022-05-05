@@ -46,7 +46,7 @@ request(optionsT, function (error, response, body) {
 });
 
 
-//walmart api for pokemon egends arcues  -     
+//walmart api for pokemon legends arcues  -     
 const request = require('request');
 
 const optionsW = {

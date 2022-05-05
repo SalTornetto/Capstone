@@ -40,7 +40,6 @@ var services = function(app) {
       });
 
       app.get('/read-TPrice', function(req, res){
-        // let tempID = 1;
         let Tquery = `SELECT * FROM (SELECT idGames, MAX(price_date) AS price_date, price, store FROM price_history Where store = 'Target' GROUP BY price_date, idGames order by idGames, price_date desc) as tbale1 group by idGames`
         connection.query(Tquery, function(err, rows){
             if(err){
@@ -65,7 +64,6 @@ var services = function(app) {
       });
 
       app.get('/read-WPrice', function(req, res){
-        // let tempID = 1;
         let Wquery = `SELECT * FROM (SELECT idGames, MAX(price_date) AS price_date, price, store FROM price_history Where store = 'Walmart' GROUP BY price_date, idGames order by idGames, price_date desc) as tbale1 group by idGames`
         connection.query(Wquery, function(err, rows){
             if(err){
@@ -81,10 +79,5 @@ var services = function(app) {
 
 
 }; //end services
-
-// `SELECT * FROM price_history WHERE price_date < current_date AND store='Target' AND idGames = '1' ORDER BY price_date DESC LIMIT 1`
-
-// "SELECT * FROM price_history WHERE price_date < current_date AND store='Target' AND idGames = '1' ORDER BY price_date DESC LIMIT 1"
-
 
 module.exports = services;

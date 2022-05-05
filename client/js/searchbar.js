@@ -1,5 +1,8 @@
-//Playing around with search bar
-
+/*
+Some of the code on this page is a snippit from CodingNepal, specifically this post here
+https://www.codingnepalweb.com/search-bar-autocomplete-search-suggestions-javascript/
+modifications were made to better suit my projects function/design
+*/
 
 let suggestions = [
     "Minecraft",
@@ -9,12 +12,10 @@ let suggestions = [
     "Skyrim",
     "Pokemon: Legends Arceus",
     "Kirby and the Forgotten Land",
-    "ERROR"
+    "ERROR" //This is just for demo purposes and brings you to spinning wheel simulator
 
 ];
 
-
-// getting all required elements
 // getting all required elements
 const searchWrapper = document.querySelector(".search-input");
 const inputBox = searchWrapper.querySelector("input");
